@@ -29,7 +29,12 @@
     "pages/order/fill-tracking-no/index",
     "pages/order/delivery-detail/index",
     "pages/order/invoice/index",
-    "pages/usercenter/name-edit/index"
+    "pages/usercenter/name-edit/index",
+    "pages/trade/trade-detail/index",
+    "pages/trade/recharge/index",
+    "pages/trade/cash-out/index"
+
+
   ],
   "tabBar": {
     "custom": true,

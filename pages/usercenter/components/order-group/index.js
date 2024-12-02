@@ -10,12 +10,12 @@ Component({
     },
     title: {
       type: String,
-      value: '我的订单',
+      value: '账户余额：',
     },
-    desc: {
-      type: String,
-      value: '全部订单',
-    },
+    // desc: {
+    //   type: String,
+    //   value: '250元',
+    // },
     isTop: {
       type: Boolean,
       value: true,
