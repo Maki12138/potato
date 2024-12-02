@@ -13,20 +13,18 @@ Page({
 
   data: {
     tabs: [
-      { key: -1, text: '全部' },
-      { key: OrderStatus.PENDING_PAYMENT, text: '待付款', info: '' },
-      { key: OrderStatus.PENDING_DELIVERY, text: '待发货', info: '' },
-      { key: OrderStatus.PENDING_RECEIPT, text: '待收货', info: '' },
-      { key: OrderStatus.COMPLETE, text: '已完成', info: '' },
+      { key: 1, text: '烤薯订单', info: '' },
+      { key: 2, text: '抢鲜订单', info: '' },
+      { key: 3, text: '薯城订单', info: '' },
     ],
-    curTab: -1,
+    curTab: 1,
     orderList: [],
     listLoading: 0,
     pullDownRefreshing: false,
     emptyImg:
       'https://cdn-we-retail.ym.tencent.com/miniapp/order/empty-order-list.png',
     backRefresh: false,
-    status: -1,
+    status: 1,
   },
 
   onLoad(query) {

@@ -2,12 +2,18 @@ import { fetchUserCenter } from '../../services/usercenter/fetchUsercenter';
 import Toast from 'tdesign-miniprogram/toast/index';
 
 const menuData = [
-  [
+  [ 
     {
-      title: '收货地址',
+      title: '我的订单',
       tit: '',
       url: '',
-      type: 'address',
+      type: 'orderList',
+    },
+    {
+      title: '我的战绩',
+      tit: '',
+      url: '',
+      type: '',
     },
     {
       title: '优惠券',
@@ -15,65 +21,67 @@ const menuData = [
       url: '',
       type: 'coupon',
     },
-    {
-      title: '积分',
-      tit: '',
-      url: '',
-      type: 'point',
-    },
+    // {
+    //   title: '积分',
+    //   tit: '',
+    //   url: '',
+    //   type: 'point',
+    // },
   ],
   [
+    // {
+    //   title: '帮助中心',
+    //   tit: '',
+    //   url: '',
+    //   type: 'help-center',
+    // },
+    // {
+    //   title: '客服热线',
+    //   tit: '',
+    //   url: '',
+    //   type: 'service',
+    //   icon: 'service',
+    // },
     {
-      title: '帮助中心',
+      title: '退出',
       tit: '',
       url: '',
       type: 'help-center',
     },
     {
-      title: '客服热线',
+      title: '关于',
       tit: '',
       url: '',
       type: 'service',
-      icon: 'service',
+      icon: '',
+    },
+    {
+      title: '其他',
+      tit: '',
+      url: '',
+      type: 'service',
+      icon: '',
     },
   ],
 ];
 
 const orderTagInfos = [
   {
-    title: '待付款',
+    title: '交易明细',
     iconName: 'wallet',
-    orderNum: 0,
-    tabType: 5,
-    status: 1,
+    type: 1,
+    
   },
   {
-    title: '待发货',
+    title: '充值',
     iconName: 'deliver',
-    orderNum: 0,
-    tabType: 10,
-    status: 1,
+    type: 2,
+
   },
   {
-    title: '待收货',
+    title: '提现',
     iconName: 'package',
-    orderNum: 0,
-    tabType: 40,
-    status: 1,
-  },
-  {
-    title: '待评价',
-    iconName: 'comment',
-    orderNum: 0,
-    tabType: 60,
-    status: 1,
-  },
-  {
-    title: '退款/售后',
-    iconName: 'exchang',
-    orderNum: 0,
-    tabType: 0,
-    status: 1,
+    type: 3
   },
 ];
 
@@ -148,6 +156,11 @@ Page({
     const { type } = currentTarget.dataset;
 
     switch (type) {
+      case 'orderList':{
+        wx.navigateTo({ url: '/pages/order/order-list/index' });
+        break;
+
+      }
       case 'address': {
         wx.navigateTo({ url: '/pages/usercenter/address/list/index' });
         break;
@@ -194,12 +207,14 @@ Page({
   },
 
   jumpNav(e) {
-    const status = e.detail.tabType;
-
-    if (status === 0) {
-      wx.navigateTo({ url: '/pages/order/after-service-list/index' });
-    } else {
-      wx.navigateTo({ url: `/pages/order/order-list/index?status=${status}` });
+    const status = e.detail.type;
+    console.log(status)
+    if (status === 1) {
+      wx.navigateTo({ url: '/pages/trade/trade-detail/index' });
+    } else if (status === 2){
+      wx.navigateTo({ url: "/pages/trade/recharge/index" });
+    } else{
+      wx.navigateTo({ url: "/pages/trade/cash-out/index" });
     }
   },
 
