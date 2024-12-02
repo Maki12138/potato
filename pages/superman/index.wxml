@@ -8,22 +8,38 @@
 </view>
 <view class="home-page-active">
   <view class="active-pic" bind:tap="goEventDetail">
-			<t-image
-			  t-class="event__img"
-			  src="{{  }}"
-			  mode="aspectFill"
-			  lazy-load
-			/>
-		</view>
+    <image src="../../images/sn.png" mode="widthFix" class="event__img"></image>
+  </view>
 </view>
 <view class="home-page-container">
-  <view class="home-page-tabs">
-    <t-tabs t-class="t-tabs" t-class-active="tabs-external__active" t-class-item="tabs-external__item" defaultValue="{{0}}" space-evenly="{{false}}" bind:change="tabChangeHandle">
-      <t-tab-panel wx:for="{{tabList}}" wx:for-index="index" wx:key="index" label="{{item.text}}" value="{{item.key}}" />
-    </t-tabs>
+  <view class="device-list-wrapper">
+    <view class="device-list">
+      <view class="device-head">
+        <view class="device-code">A00001</view>
+        <view class="device-goods-name">红薯超人烤秘薯</view>
+      </view>
+      <view class="device-middle">
+        <view>
+          <view class="device-middle-left">
+            <view class="device-round green-bg"></view>
+            <view class="device-distance">雨润-星雨华府南区</view>
+            <view class="device-location"></view>
+          </view>
+          <view class="device-middle-left" style="margin-top: 12rpx;">
+            <view class="device-round orange-bg"></view>
+            <view class="device-distance">距您0.12km</view>
+            <view class="device-location"></view>
+          </view>
+        </view>
+        <view class="devive-middle-right">
+          <view class="good-left">剩余可抢:<span>20</span></view>
+          <view class="good-price">售价:12.8元 抢鲜价<span>10</span>元</view>
+        </view>
+      </view>
+      <view class="device-bottom">
+        <t-progress percentage="88" label="{{false}}"  color="{{ {  from: '#f69313', to: '#d27a07' } }}" status="active" />
+      </view>
+    </view>
   </view>
 
-  <goods-list wr-class="goods-list-container" goodsList="{{goodsList}}" bind:click="goodListClickHandle" bind:addcart="goodListAddCartHandle" />
-  <load-more list-is-empty="{{!goodsList.length}}" status="{{goodsListLoadStatus}}" bind:retry="onReTry" />
-  <t-toast id="t-toast" />
 </view>

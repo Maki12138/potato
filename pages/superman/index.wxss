@@ -115,7 +115,7 @@ page {
 
 .active-pic {
   width: 100%;
-  height: 200rpx;
+  padding-top: 16rpx;
 }
 
 .event__img {
@@ -123,4 +123,81 @@ page {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+.device-list-wrapper{
+  padding-bottom: 24rpx;
+}
+.device-list{
+  margin-bottom: 24rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+}
+.device-head{
+  display: flex;
+  align-items: center;
+}
+.device-code{
+  font-size: 36rpx;
+  color: #0d7ac5;
+  font-weight: bold;
+}
+.device-goods-name{
+  font-size: 34rpx;
+  color:#323232;
+  margin-left: 16rpx;
+}
+.device-distance{
+  color: #323232;
+  font-size: 14px;
+  margin-right: 16rpx;
+}
+.device-location{
+  color: #808283;
+  font-size: 14px;
+}
+.device-round{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.green-bg{
+  background-color: #20b59e;
+}
+.orange-bg{
+  background-color: #f69313;
+}
+.device-middle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24rpx;
+}
+.device-middle-left{
+  display: flex;
+  align-items: center;
+}
+.devive-middle-right{
+  text-align: right;
+}
+.good-left{
+  font-size: 24rpx;
+  color: #323232;
+  margin-bottom: 12rpx;
+}
+.good-left span{
+  font-size: 40rpx;
+  color: #f69313;
+  font-weight: bold;
+}
+.good-price{
+  font-size: 24rpx;
+  color:#888;
+}
+.good-price span{
+  color:#f69313;
+}
+.device-bottom{
+  margin-top: 24rpx;
 }
